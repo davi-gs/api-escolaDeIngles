@@ -23,4 +23,6 @@ router.put('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.atua
 
 router.delete('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.apagaMatricula)
 
+router.post('/pessoas/:estudanteId/matricula/:matriculaId/restaura', PessoaController.restauraMatricula)
+
 module.exports = router
