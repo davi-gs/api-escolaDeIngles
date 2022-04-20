@@ -11,22 +11,24 @@ router.get('/pessoas/:id', PessoaController.pegaUmaPessoa)
 
 router.get('/pessoas/:estudanteId/matricula', PessoaController.pegaMatriculas)
 
-router.post('/pessoas', PessoaController.criarPessoa)
-
-router.put('/pessoas/:id', PessoaController.atualizaPessoa)
-
-router.delete('/pessoas/:id', PessoaController.apagaPessoa)
-
-router.post('/pessoas/:id/restaura', PessoaController.restauraPessoa)
+router.get('/pessoas/matricula/:turmaId/confirmadas', PessoaController.pegaMatriculasPorTurma)
 
 router.get('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.pegaUmaMatricula)
 
+router.post('/pessoas', PessoaController.criarPessoa)
+
+router.post('/pessoas/:id/restaura', PessoaController.restauraPessoa)
+
+router.post('/pessoas/:estudanteId/matricula/:matriculaId/restaura', PessoaController.restauraMatricula)
+
 router.post('/pessoas/:estudanteId/matricula', PessoaController.criarMatricula)
+
+router.put('/pessoas/:id', PessoaController.atualizaPessoa)
 
 router.put('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.atualizaMatricula)
 
-router.delete('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.apagaMatricula)
+router.delete('/pessoas/:id', PessoaController.apagaPessoa)
 
-router.post('/pessoas/:estudanteId/matricula/:matriculaId/restaura', PessoaController.restauraMatricula)
+router.delete('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.apagaMatricula)
 
 module.exports = router
